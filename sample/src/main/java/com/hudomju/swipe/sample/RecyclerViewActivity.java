@@ -47,12 +47,15 @@ public class RecyclerViewActivity extends Activity {
 
                             @Override
                             public void onPendingDismiss(RecyclerViewAdapter recyclerView, int position) {
-
+                                //TODO doing stuff when swipe in pending
+                                Toast.makeText(RecyclerViewActivity.this, "onPendingDismiss:" + position, Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
                             public void onDismiss(RecyclerViewAdapter view, int position) {
+                                //TODO doing stuff when swipe removed
                                 adapter.remove(position);
+                                Toast.makeText(RecyclerViewActivity.this, "Remove:" + position, Toast.LENGTH_SHORT).show();
                             }
                         });
         touchListener.setDismissDelay(TIME_TO_AUTOMATICALLY_DISMISS_ITEM);
@@ -65,11 +68,16 @@ public class RecyclerViewActivity extends Activity {
                     @Override
                     public void onItemClick(View view, int position) {
                         if (view.getId() == R.id.txt_delete) {
+                            //TODO doing stuff when Swipe-click-Delete
+                            Toast.makeText(RecyclerViewActivity.this, "Swipe-Deleted:" + position, Toast.LENGTH_SHORT).show();
                             touchListener.processPendingDismisses();
                         } else if (view.getId() == R.id.txt_undo) {
+                            //TODO doing stuff when Swipe-click-Undo
+                            Toast.makeText(RecyclerViewActivity.this, "Swipe-Undo:" + position, Toast.LENGTH_SHORT).show();
                             touchListener.undoPendingDismiss();
                         } else { // R.id.txt_data
-                            Toast.makeText(RecyclerViewActivity.this, "Position " + position, LENGTH_SHORT).show();
+                            //TODO doing stuff when click
+                            Toast.makeText(RecyclerViewActivity.this, "Position:" + position, Toast.LENGTH_SHORT).show();
                         }
                     }
                 }));
