@@ -18,8 +18,6 @@ import com.hudomju.swipe.adapter.RecyclerViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.widget.Toast.LENGTH_SHORT;
-
 public class RecyclerViewActivity extends Activity {
 
     private static final int TIME_TO_AUTOMATICALLY_DISMISS_ITEM = 3000;
@@ -83,7 +81,7 @@ public class RecyclerViewActivity extends Activity {
                 }));
     }
 
-    static class MyBaseAdapter extends RecyclerView.Adapter<MyBaseAdapter.MyViewHolder> {
+    class MyBaseAdapter extends RecyclerView.Adapter<MyBaseAdapter.MyViewHolder> {
 
         private static final int SIZE = 100;
 
@@ -115,7 +113,7 @@ public class RecyclerViewActivity extends Activity {
             notifyItemRemoved(position);
         }
 
-        static class MyViewHolder extends RecyclerView.ViewHolder {
+        class MyViewHolder extends RecyclerView.ViewHolder {
 
             TextView dataTextView;
             MyViewHolder(View view) {
