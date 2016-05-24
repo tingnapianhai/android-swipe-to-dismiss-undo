@@ -6,6 +6,7 @@
     android:id="@+id/lyt_container"
     android:background="@color/gray_background">
 
+    <!-- do your own custom-list-view here -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

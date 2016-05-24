@@ -88,8 +88,10 @@ public class RecyclerViewActivity extends Activity {
         private final List<String> mDataSet = new ArrayList<>();
 
         MyBaseAdapter() {
-            for (int i = 0; i < SIZE; i++)
+            for (int i = 0; i < SIZE; i++) {
+                //TODO initializing value
                 mDataSet.add(i, "This is row number " + i);
+            }
         }
 
         @Override
